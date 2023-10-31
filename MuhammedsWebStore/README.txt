@@ -14,3 +14,7 @@ Welcome to Muhammed's Web Store MVC app for the 4th time, Again I messed up the 
 11:52	Downloaded my favourite theme on bootswatch.com - Slate
 11:53	Replaced the existing bootstrap.css file with the new downloaded one ( Lib -> dist -> css)
 11:55	changed the link on layout.cshtml on line 7 from the minifind version to the regular one.
+------------------------------------------------------
+2023-10-31
+00:01	Removed the text dark from the home and privacy links
+00:03	Removed the text dark from the login and Register in LoginPartial.cshtml
