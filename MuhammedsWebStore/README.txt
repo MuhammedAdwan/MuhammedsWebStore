@@ -409,3 +409,14 @@ System.Xml.XmlSerializer.4.3.0
 12:08	Changed the errorViewModels.cs namespace to .Models.ViewModels
 12:17	changed the project reference to the new @model MuhammedsWebStore.Models.ViewModels.ErrorViewModel
 
+12:37	Created class in the utility project called it SD.cs and changed the properties of the class  from class SD to public static class SD
+12:40	Added project references to models and utility Models
+12:45	Added Area - Customer to Area Folder
+12:45	Changed the scaffoldingReadMe.txt to pattern : "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+12:47	changed the route in startup.cs to pattern : "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+12:48	moved the HomeControllers.cs to the area - customer - controller Folder and deleted the data and models
+12:49	Defined the homecontroller.cs in the customer Area
+12:55	Copied viewImport and viewstart to customer area
+12:55	Modified the layout reference in _ViewStart.cshtml for the new path
+12:59	Added new area in Areas and called it Admin
+13:01	Deleted the controller Folder
