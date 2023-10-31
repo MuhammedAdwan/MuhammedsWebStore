@@ -18,3 +18,5 @@ Welcome to Muhammed's Web Store MVC app for the 4th time, Again I messed up the 
 2023-10-31
 00:01	Removed the text dark from the home and privacy links
 00:03	Removed the text dark from the login and Register in LoginPartial.cshtml
+00:22	Added the Datepicker from jqueryui.com, the box is not working or move with my mouse, iam going to fix that later
+00:23	Adding a new dropdown menu with extra 3 subs
