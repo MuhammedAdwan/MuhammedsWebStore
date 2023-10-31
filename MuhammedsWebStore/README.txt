@@ -420,3 +420,9 @@ System.Xml.XmlSerializer.4.3.0
 12:55	Modified the layout reference in _ViewStart.cshtml for the new path
 12:59	Added new area in Areas and called it Admin
 13:01	Deleted the controller Folder
+-------------------------------------------------------
+									PART 2
+
+14:50 Built the new application
+14:50 changed the code in  appsetting.json from "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=MuhammedsWebStore;Trusted_Connection=True;MultipleActiveResultSets=true" to the new one as per the powerpoint
+
