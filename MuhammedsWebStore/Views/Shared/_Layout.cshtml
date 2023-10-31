@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 </head>
 <body>
     <header>
@@ -48,32 +51,37 @@
         </main>
     </div>
 
-@*    <div id="draggable" class="ui-widget-content">
-        <p>Drag me around</p>
-    </div>
+    @*    <div id="draggable" class="ui-widget-content">
+            <p>Drag me around</p>
+        </div>
 
-    <style>
-        #draggable {
-            width: 150px;
-            height: 150px;
-            padding: 0.5em;
-            margin: 1.5rem
-        }
-    </style>
+        <style>
+            #draggable {
+                width: 150px;
+                height: 150px;
+                padding: 0.5em;
+                margin: 1.5rem
+            }
+        </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#draggable").draggable();
-        });
-    </script>*@
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#draggable").draggable();
+            });
+        </script>*@
 
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - MuhammedsWebStore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/e19c476714.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
