@@ -10,3 +10,4 @@ Welcome to Muhammed's Web Store MVC app for the 4th time, Again I messed up the 
 11:29	updated Database by going to NuGet console manager, PM then inserted the command
 11:29	Checked the website - Its working on the default view- we are going to change that soon
 11:30	removed between () in startup.cs services.addDefaultIdentity<IdentityUser> Line 35
+11:52	Added 2 breakpoints (debugging) on index and privacy methods in the HomeControllers.cs
