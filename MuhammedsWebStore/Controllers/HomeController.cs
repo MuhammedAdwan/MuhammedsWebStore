@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MuhammedsWebStore.Models;
+using MuhammedsWebStore.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
