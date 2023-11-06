@@ -436,3 +436,5 @@ System.Xml.XmlSerializer.4.3.0
 14:10	added the migration file in readme - Package Manager Console Host Version 5.11.4.13 - Type 'get-help NuGet' to see all available NuGet commands.
 14:14	Reviewed the SQL syntax and statments
 14:15	updated DataBase using this command pm> update-database
+14:19	Reviewed the updated database tables and ran the application - its Working
+
