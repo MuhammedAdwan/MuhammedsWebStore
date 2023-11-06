@@ -423,6 +423,14 @@ System.Xml.XmlSerializer.4.3.0
 -------------------------------------------------------
 									PART 2
 
-14:50 Built the new application
-14:50 changed the code in  appsetting.json from "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=MuhammedsWebStore;Trusted_Connection=True;MultipleActiveResultSets=true" to the new one as per the powerpoint
+	2023 - 10 - 31
+14:50	Built the new application
+14:50	changed the code in  appsetting.json from "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=MuhammedsWebStore;Trusted_Connection=True;MultipleActiveResultSets=true" to the new one as per the powerpoint
+15:09	used the Nuget Package Manager to add the migration 
+		PM > add-migration AddDefaultIdentityMigration 
+		added to the default project.DataAccess
 
+
+-------------------------------------------------------
+	2023 - 11 - 06
+14:10	added the migration file in readme
