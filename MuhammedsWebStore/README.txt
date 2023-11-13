@@ -453,3 +453,5 @@ System.Xml.XmlSerializer.4.3.0
 		Change your target project to the migrations project by using the Package Manager Console's Default project drop-down list, or by executing "dotnet ef" from the directory containing the migrations project."
 12:02	Changed the default project to DataAccess and tried again
 12:12	I had an error on line 16   -  public DbSet<Category> Categories { get; set; }
+13:05	I had to take a break for my sanity 
+13:05	I found the issue, I added public to the class for accissiblity
