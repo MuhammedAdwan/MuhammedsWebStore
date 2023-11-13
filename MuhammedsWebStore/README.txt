@@ -495,6 +495,7 @@ System.Xml.XmlSerializer.4.3.0
 14:20   Added using libraries using MuhammedsBooks.DataAccess.Repository.IRepository;
         and using MuhammedsBooks.Models; to CategoryRepository
 
+14:25   Added using Microsoft.EntityFrameworkCore library to Repository.cs
 
 
 

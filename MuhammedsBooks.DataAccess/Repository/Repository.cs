@@ -1,4 +1,5 @@
-﻿using MuhammedsBooks.DataAccess.Repository.IRepository;
+﻿using Microsoft.EntityFrameworkCore;
+using MuhammedsBooks.DataAccess.Repository.IRepository;
 using MuhammedsWebStore.DataAccess.Data;
 using System;
 using System.Collections.Generic;
