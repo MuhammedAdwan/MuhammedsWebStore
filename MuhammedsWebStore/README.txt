@@ -479,6 +479,22 @@ System.Xml.XmlSerializer.4.3.0
 
 13:50   Implemented the class that implement the repo
 13:51   Modified the Repository.cs class by adding the using library and implement interface by rightclicking on the IRepository<T>
+14:07   modify the database w/ the db context and creating constructors and dependencies injection
+14:12   Added this code snippet to Repository.cs under public class Repository<T> : IRepository<T> where T : class
+        //modify the database w/ the db context
+        private readonly ApplicationDbContext _db; //get the db instance using the constructor and DI
+        internal DbSet<T> dbset;
+
+        public Repository(ApplicationDbContext db) //use hot keys C-T-O-R to build the constructor
+        {
+            _db = db;
+            this.dbset = _db.Set<T>();
+        }
+
+14:19   Created individual repos CategoryRepository.cs inside Repository Folder and ICategoryRepository.cs inside IRepository Folder
+14:20   Added using libraries using MuhammedsBooks.DataAccess.Repository.IRepository;
+        and using MuhammedsBooks.Models; to CategoryRepository
+
 
 
 
