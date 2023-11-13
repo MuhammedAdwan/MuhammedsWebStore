@@ -438,5 +438,5 @@ System.Xml.XmlSerializer.4.3.0
 14:15	updated DataBase using this command pm> update-database
 14:19	Reviewed the updated database tables and ran the application - its Working
 14:30	Creating new class called Category.cs in the Models folder
-14:35	
+14:35	Modified the Category Class Category.cs and added the ComponentModel.DataAnnotations Library
 
