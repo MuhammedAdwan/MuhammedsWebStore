@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MuhammedsBooks.DataAccess.Repository.IRepository
 {
-    class ICategoryRepository
+    interface ICategoryRepository
     {
     }
 }
