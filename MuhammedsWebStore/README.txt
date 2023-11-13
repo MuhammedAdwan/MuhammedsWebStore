@@ -497,6 +497,18 @@ System.Xml.XmlSerializer.4.3.0
 
 14:25   Added using Microsoft.EntityFrameworkCore library to Repository.cs
 18:40   Modified CategoryRepository.cs
+18:55   Modified CategoryRepository.cs by adding this code snippet
+                public void Update(Category category)
+        {
+            //use .net LINQ to retrieve the first or default category object,
+            //then pass the id as a generic entity which matches the category ID
+            var objFromDb = _db.Categories.FirstOrDefault(s => s.Id == category.Id);
+            if (objFromDb != null) //save changes if not null
+            {
+                objFromDb.Name = category.Name;
+                _db.SaveChanges();
+            }
+        }
 
 
 
