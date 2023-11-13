@@ -455,3 +455,8 @@ System.Xml.XmlSerializer.4.3.0
 12:12	I had an error on line 16   -  public DbSet<Category> Categories { get; set; }
 13:05	I had to take a break for my sanity 
 13:05	I found the issue, I added public to the class for accissiblity
+13:06	I had CS0006 error - Severity	Code	Description	Project	File	Line	Suppression State
+		Error	CS0006	Metadata file 'C:\Users\W0837901\Source\Repos\MuhammedAdwan\MuhammedsWebStore\MuhammedsBooks.DataAccess\bin\Debug\net5.0\ref\MuhammedsBooks.DataAccess.dll' could not be found	MuhammedsWebStore	C:\Users\W0837901\Source\Repos\MuhammedAdwan\MuhammedsWebStore\MuhammedsWebStore\CSC	1	Active
+
+
+
