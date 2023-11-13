@@ -458,5 +458,27 @@ System.Xml.XmlSerializer.4.3.0
 13:06	I had CS0006 error - Severity	Code	Description	Project	File	Line	Suppression State
 		Error	CS0006	Metadata file 'C:\Users\W0837901\Source\Repos\MuhammedAdwan\MuhammedsWebStore\MuhammedsBooks.DataAccess\bin\Debug\net5.0\ref\MuhammedsBooks.DataAccess.dll' could not be found	MuhammedsWebStore	C:\Users\W0837901\Source\Repos\MuhammedAdwan\MuhammedsWebStore\MuhammedsWebStore\CSC	1	Active
 
+13:29	updated the library and the applicationDbcontent.cs - deleted the migration - added the migration command
+13:30	updated database update-database
+13:32   Added new folder called it Repository and added IRepository folder inside Repo parent folder, then added IRepository.cs interface
+13:44   Modified the IRepository.cs interface with the code below to do all the CRUD operations    
+            IEnumerable<T> GetAll(
+            Expression<Func<T, bool>> filter = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            string includeProperties = null
+            );
+        T GetFirstOrDefault(
+            Expression<Func<T, bool>> filter = null,
+            string includeProperties = null
+            );
+
+        void Add(T entity);
+        void Remove(int id);
+        void Remove(T entity);
+        void RemoveRange(IEnumerable<T> entity);
+
+13:50   Implemented the class that implement the repo
+13:51   Modified the Repository.cs class by adding the using library and implement interface by rightclicking on the IRepository<T>
+
 
 
