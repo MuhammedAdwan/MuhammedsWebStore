@@ -439,4 +439,17 @@ System.Xml.XmlSerializer.4.3.0
 14:19	Reviewed the updated database tables and ran the application - its Working
 14:30	Creating new class called Category.cs in the Models folder
 14:35	Modified the Category Class Category.cs and added the ComponentModel.DataAnnotations Library
+-------------------------------------------------------
 
+	2023 - 11- 13
+11:50	Added the Migration via pm console using this command -   add-migration AddCategoryToDb
+11:52	I had Build Failed error while trying to add the migration
+11:55	Comment out the unsused libraries 
+11:56	Found a spelling error - changed the key to Key in the category class
+11:57	Cleaned the code and rebuild it, no errors
+12:00	Tried to add the migration again, I got another error
+		"Build succeeded. Your target project 'MuhammedsWebStore' doesn't match your migrations assembly 'MuhammedsBooks.DataAccess'. Either change your target project or change your migrations assembly.
+		Change your migrations assembly by using DbContextOptionsBuilder. E.g. options.UseSqlServer(connection, b => b.MigrationsAssembly("MuhammedsWebStore")). By default, the migrations assembly is the assembly containing the DbContext.
+		Change your target project to the migrations project by using the Package Manager Console's Default project drop-down list, or by executing "dotnet ef" from the directory containing the migrations project."
+12:02	Changed the default project to DataAccess and tried again
+12:12	I had an error on line 16   -  public DbSet<Category> Categories { get; set; }
