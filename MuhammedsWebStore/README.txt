@@ -603,3 +603,4 @@ System.Xml.XmlSerializer.4.3.0
 12:33   Created category folder in views and index.cshtml
 12:37   run the application and working, now we need to add the category to the drop down menu
 12:40   edited the navigation bar to add category
+12:50   Added the js script to the solution
