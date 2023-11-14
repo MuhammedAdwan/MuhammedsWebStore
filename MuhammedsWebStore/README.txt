@@ -607,3 +607,5 @@ System.Xml.XmlSerializer.4.3.0
 12:55   I got an error in the layout.cshtml - fixed the layout issue, i forgot the href# in the dropdown menu
 13:00   Created Upsert.cshtml and added the given code + added the razor view
 13:25   modifid upsert.cshtml with the edit and back
+13:30   updated CategoryController.cs
+13:36   Added the delete function to the category js
