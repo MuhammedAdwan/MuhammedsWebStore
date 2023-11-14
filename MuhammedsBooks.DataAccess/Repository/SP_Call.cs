@@ -1,5 +1,7 @@
-﻿using Dapper;
-using MuhammedsBooks.DataAccess.Repository.IRepository;
+﻿using MuhammedsBooks.DataAccess.Repository.IRepository;
+using MuhammedsWebStore.DataAccess.Data;
+using Dapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 //using System.Linq;
