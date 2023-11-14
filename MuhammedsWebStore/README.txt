@@ -604,3 +604,5 @@ System.Xml.XmlSerializer.4.3.0
 12:37   run the application and working, now we need to add the category to the drop down menu
 12:40   edited the navigation bar to add category
 12:50   Added the js script to the solution
+12:55   I got an error in the layout.cshtml - fixed the layout issue, i forgot the href# in the dropdown menu
+13:00   Created Upsert.cshtml and added the given code + added the razor view
