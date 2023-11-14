@@ -597,4 +597,5 @@ System.Xml.XmlSerializer.4.3.0
 
 -------------------------------------------------------------------------------------------
 
-11:30 trying to fix the categorey in CategoryRespository.cs
+11:30   trying to fix the categorey in CategoryRespository.cs
+11:47   Updated startup.cs with services.AddScoped<UnitOfWork, UnitOfWork>();and added new using libraries

@@ -1,3 +1,6 @@
+using MuhammedsBooks.DataAccess.Repository;
+using MuhammedsBooks.DataAccess.Repository.IRepository;
+using MuhammedsWebStore.DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,8 +10,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MuhammedsWebStore.DataAccess.Data;
-//using MuhammedsWebStore.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,7 @@ namespace MuhammedsWebStore
                 //options => options.SignIn.RequireConfirmedAccount = true
                 )
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<UnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
         }
 
