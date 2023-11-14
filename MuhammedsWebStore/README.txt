@@ -512,5 +512,20 @@ System.Xml.XmlSerializer.4.3.0
 19:10   Created and modified ISP_Call.cs
 19:20   Adding S_Call.cs class to Repository folder, and implemented the interface
 19:21   Adding using libraries to SP_Call.cs
+19:32   update SP_Calls.cs to add a connection to the database
+        namespace MuhammedsBooks.DataAccess.Repository
+{
+    public class SP_Call : ISP_Call
+    {
+        //access the db
+        private readonly ApplicationDbContext _db;
+        private static string ConnectionString = ""; //needed to callled the stired procedures
+
+        //constructor
+        public SP_Call(ApplicationDbContext db)
+        {
+            _db = db;
+            ConnectionString = db.Database.GetDbConnection().ConnectionString;
+        }
 
 

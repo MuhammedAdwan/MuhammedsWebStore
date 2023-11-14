@@ -12,6 +12,19 @@ namespace MuhammedsBooks.DataAccess.Repository
 {
     public class SP_Call : ISP_Call
     {
+        //access the db
+        private readonly ApplicationDbContext _db;
+        private static string ConnectionString = ""; //needed to callled the stired procedures
+
+        //constructor
+        public SP_Call(ApplicationDbContext db)
+        {
+            _db = db;
+            ConnectionString = db.Database.GetDbConnection().ConnectionString;
+        }
+
+
+        //i,plement the ISP_Call interface
         public void Dispose()
         {
             throw new NotImplementedException();
