@@ -442,7 +442,7 @@ System.Xml.XmlSerializer.4.3.0
 -------------------------------------------------------
 
 	2023 - 11- 13
-11:50	Added the Migration via pm console using this command -   add-migration AddCategoryToDb
+11:50	Added the Migration via pm console using this command -   add-migration AddCategoryToDb 20231113182417_AddCategoryToDb
 11:52	I had Build Failed error while trying to add the migration
 11:55	Comment out the unsused libraries 
 11:56	Found a spelling error - changed the key to Key in the category class
