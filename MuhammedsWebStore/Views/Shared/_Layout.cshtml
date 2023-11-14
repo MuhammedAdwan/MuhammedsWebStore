@@ -26,14 +26,14 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 DropDown
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Dropdown Item 1</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index" href="#">Category</a>
                                 <a class="dropdown-item" href="#">Dropdown Item 2</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Another Item</a>

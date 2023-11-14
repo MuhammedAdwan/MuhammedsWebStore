@@ -601,3 +601,4 @@ System.Xml.XmlSerializer.4.3.0
 11:47   Updated startup.cs with services.AddScoped<UnitOfWork, UnitOfWork>();and added new using libraries
 12:21   Fixed Category issue by adding public to the controller and IcategoryRep
 12:33   Created category folder in views and index.cshtml
+12:37   run the application and working, now we need to add the category to the drop down menu
