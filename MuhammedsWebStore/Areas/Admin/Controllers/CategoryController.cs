@@ -16,6 +16,33 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                if (category.Id == 0)
+                {
+                    _unitOfWork.Category.Add(category);
+                  //  _unitOfWork.save();
+                }
+                else
+                {
+
+                    _unitOfWork.Category.update(category);
+
+                }
+            }
+            return View(category);
+        }
+
+
+
+
+
+
+
         public IActionResult Upsert(int? id) //action method for upsert
         {
             Category category = new Category();//using NiharBooks.Models;
@@ -33,6 +60,11 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
             }
             return View();
         }
+
+
+
+
+
 
             //API calls here
             #region API CALLS
