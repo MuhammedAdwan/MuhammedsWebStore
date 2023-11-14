@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MuhammedsBooks.DataAccess.Repository.IRepository
 {
-    interface ICategoryRepository : IRepository<Category>
+    public interface ICategoryRepository : IRepository<Category>
     {
         void update(Category category);
     }
