@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MuhammedsBooks.DataAccess.Repository
 {
-    public class UnitOfWork //making the method public
+    public class UnitOfWork : IUnitOfWork //making the method public
     {
         private readonly ApplicationDbContext _db; //the using statment
 

@@ -29,6 +29,10 @@ namespace MuhammedsBooks.DataAccess.Repository
                 _db.SaveChanges();
             }
         }
-    
+
+        public void update(Category category)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
