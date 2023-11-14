@@ -596,7 +596,7 @@ System.Xml.XmlSerializer.4.3.0
         Created UnitOfWork Class and modified the code
 
 -------------------------------------------------------------------------------------------
-
+        Nov 14 2023
 11:30   trying to fix the categorey in CategoryRespository.cs
 11:47   Updated startup.cs with services.AddScoped<UnitOfWork, UnitOfWork>();and added new using libraries
 12:21   Fixed Category issue by adding public to the controller and IcategoryRep
