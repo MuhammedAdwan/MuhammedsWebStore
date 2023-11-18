@@ -175,3 +175,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 
         2023-11-17
 11:48   updating Category Controllers.cs and Unit of works, as my upsert.cshtml not working properly
+11:59   fixed the Upsert class, I can see add a category page, but I cant create any list
