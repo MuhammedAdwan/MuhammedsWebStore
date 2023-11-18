@@ -22,6 +22,26 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
             return View();
         }
 
+        public IActionResult Upsert(int? id)
+        {
+            Category category = new Category();
+            if (id == null)
+            {
+                return View(category);
+            }
+
+            category = _unitOfWork.Category.Get(id.GetValueOrDefault());
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+
+
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(Category category)
@@ -31,11 +51,12 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
                 if (category.Id == 0)
                 {
                     _unitOfWork.Category.Add(category);
+                    _unitOfWork.Save();
                 }
                 else
                 {
 
-                    _unitOfWork.Category.update(category);
+                    _unitOfWork.Category.Update(category);
 
                 }
                 _unitOfWork.save();
