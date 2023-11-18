@@ -33,7 +33,7 @@ namespace MuhammedsBooks.DataAccess.Repository
 
         public void save()
         {
-            throw new NotImplementedException();
+            _db.SaveChanges();
         }
     }
 }
