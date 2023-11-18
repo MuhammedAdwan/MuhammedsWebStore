@@ -157,7 +157,7 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
         Created UnitOfWork Class and modified the code
 
 -------------------------------------------------------------------------------------------
-        Nov 14 2023
+        2023-11-14
 11:30   trying to fix the categorey in CategoryRespository.cs
 11:47   Updated startup.cs with services.AddScoped<UnitOfWork, UnitOfWork>();and added new using libraries
 12:21   Fixed Category issue by adding public to the controller and IcategoryRep
@@ -170,3 +170,8 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 13:25   modifid upsert.cshtml with the edit and back
 13:30   updated CategoryController.cs
 13:36   Added the delete function to the category js
+
+--------------------------------------------------------------------------------------------
+
+        2023-11-17
+11:48   updating Category Controllers.cs and Unit of works, as my upsert.cshtml not working properly
