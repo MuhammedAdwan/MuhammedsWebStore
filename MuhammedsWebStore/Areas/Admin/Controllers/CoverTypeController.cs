@@ -1,11 +1,11 @@
-﻿using MuhammedsBooks.DataAccess.Repository;
+﻿using MuhammedsBooks.DataAccess.Repository.IRepository;
 using MuhammedsBooks.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using MuhammedsBooks.DataAccess.Repository;
 
 namespace MuhammedsWebStore.Areas.Admin.Controllers
 {
@@ -24,18 +24,18 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
 
         public IActionResult Upsert(int? id)
         {
-            Category category = new Category();
+            CoverType coverType = new CoverType();
             if (id == null)
             {
-                return View(category);
+                return View(coverType);
             }
 
-            category = _unitOfWork.Category.Get(id.GetValueOrDefault());
-            if (category == null)
+            coverType = _unitOfWork.CoverType.Get(id.GetValueOrDefault());
+            if (coverType == null)
             {
                 return NotFound();
             }
-            return View(category);
+            return View(coverType);
         }
 
 
@@ -44,25 +44,25 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(Category category)
+        public IActionResult Upsert(CoverType coverType)
         {
             if (ModelState.IsValid)
             {
-                if (category.Id == 0)
+                if (coverType.Id == 0)
                 {
-                    _unitOfWork.Category.Add(category);
-                    _unitOfWork.Save();
+                    _unitOfWork.CoverType.Add(coverType);
+                    _unitOfWork.save();
                 }
                 else
                 {
 
-                    _unitOfWork.Category.Update(category);
+                    _unitOfWork.CoverType.Update(coverType);
 
                 }
                 _unitOfWork.save();
-                return RedirectToAction(nameof(Index));  //to see all the categories
+                return RedirectToAction(nameof(Index));  //to see all the coverType
             }
-            return View(category);
+            return View(coverType);
         }
 
 
@@ -73,21 +73,21 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
         public IActionResult GetAll()
         {
             //Return NotFound()
-            var allObj = _unitOfWork.Category.GetAll();
+            var allObj = _unitOfWork.CoverType.GetAll();
             return Json(new { data = allObj });
         }
         [HttpDelete]
 
         public IActionResult Delete(int id)
         {
-            var objFromDb = _unitOfWork.Category.Get(id);
+            var objFromDb = _unitOfWork.CoverType.Get(id);
             if (objFromDb == null)
             {
                 return Json(new { success = true, message = "Error While deleting" });
 
             }
 
-            _unitOfWork.Category.Remove(objFromDb);
+            _unitOfWork.CoverType.Remove(objFromDb);
             _unitOfWork.save();
             return Json(new { success = true, message = "Delete successful" });
         }

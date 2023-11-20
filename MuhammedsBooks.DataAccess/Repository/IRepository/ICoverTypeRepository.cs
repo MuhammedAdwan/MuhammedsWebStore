@@ -11,6 +11,6 @@ namespace MuhammedsBooks.DataAccess.Repository.IRepository
 {
     public interface ICoverTypeRepository : IRepository<CoverType>
     {
-        void Update(CoverType category);
+        void Update(CoverType coverType);
     }
 }

@@ -189,3 +189,8 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 16:15   Added ICover interface + added CoverType to unit of work and IUnit of Work then pushed it to the database then I update the database
 16:17   Added CoverType to the dropdown menu NavBar
 16:28   Added CoverType Controller with all the methods
+16:40   Added the delete CoverType API calls
+16:49   I hade this error while running the app
+        InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'MuhammedsBooks.Models.Category', but this ViewDataDictionary instance requires a model item of type 'MuhammedsBooks.Models.CoverType'.
+        Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(object value)
+17:55   Couldnt find the issues, I had 7 errors while trying to fix it
