@@ -1,4 +1,5 @@
-﻿using MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository;
+﻿using MuhammedsBooks.DataAccess.Repository;
+using MuhammedsBooks.DataAccess.Repository.IRepository;
 using MuhammedsWebStore.DataAccess.Data;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,6 @@ namespace MuhammedsBooks.DataAccess.Repository
         public ICategoryRepository Category { get; private set; }
         public ISP_Call SP_Call { get; private set; }
         public ICoverTypeRepository CoverType { get; private set; }
-
 
         public void Dispose()
         {

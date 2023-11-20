@@ -1,4 +1,4 @@
-﻿using MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository;
+﻿using MuhammedsBooks.DataAccess.Repository;
 using MuhammedsWebStore.DataAccess.Data;
 using Dapper;
 using Microsoft.EntityFrameworkCore;

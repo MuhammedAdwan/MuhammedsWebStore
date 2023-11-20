@@ -186,4 +186,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 12:30   modified the ApplicationDbcontext.cs to add public DbSet<CoverType> CoverTypes { get; set; } and modified the Migration file of AddCoverTypeToDb.cs
 12:31   updated database and succeeded
 12:41   Created CoverType Repo and the ICoverType repo and modified the code and using libraries
-
+16:15   Added ICover interface + added CoverType to unit of work and IUnit of Work then pushed it to the database then I update the database

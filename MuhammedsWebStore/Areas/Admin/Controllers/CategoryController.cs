@@ -1,4 +1,4 @@
-﻿using MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository;
+﻿using MuhammedsBooks.DataAccess.Repository;
 using MuhammedsBooks.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;

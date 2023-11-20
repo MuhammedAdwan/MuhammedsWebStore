@@ -1,5 +1,4 @@
 using MuhammedsBooks.DataAccess.Repository;
-using MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository;
 using MuhammedsWebStore.DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

@@ -1,52 +1,35 @@
-﻿using System;
+﻿using MuhammedsWebStore.DataAccess.Data;
+using MuhammedsBooks.DataAccess.Repository;
+using MuhammedsBooks.Models;
+using MuhammedsWebStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MuhammedsWebStore.DataAccess.Data;
-using MuhammedsWebStore.Models;
 using MuhammedsBooks.DataAccess.Repository.IRepository;
-using MuhammedsBooks.Models;
 
 namespace MuhammedsBooks.DataAccess.Repository
 {
-    public class CoverTypeRepository : ICoverTypeRepository
+    public class CoverTypeRepository : Repository<CoverType>, ICoverTypeRepository
     {
         private readonly ApplicationDbContext _db;
+        public CoverTypeRepository(ApplicationDbContext db) : base(db)
+        {
+            _db = db;
+        }
 
-        public CoverTypeRepository(ApplicationDbContext)
-        {
-            _db = _db;
-        }
-        public void Add(CoverType coverType)
-        {
-            _db.CoverTypes.Add(coverType);
-        }
-        public void Dispose()
-        {
-            _db.Dispose();
-        }
-        public IEnumerable<CoverType> GetAll()
-        {
-            return _db.CoverTypes.ToList();
-        }
-        public CoverType GetById(int id)
-        {
-            return _db.CoverTypes.Find(id);
-        }
-        public void Remove(int id)
-        {
-            var coverType = _db.CoverTypes.Find(id);
-            if (coverType != null)
-                _db.CoverTypes.Remove(coverType);
-        }
-        public void Save()
-        {
-            _db.SaveChanges();
-        }
         public void Update(CoverType coverType)
         {
-            _db.Dispose();
+            //use .net LINQ to retrieve the first or default category object,
+            //then pass the id as a generic entity which matches the category ID
+            var objFromDb = _db.CoverTypes.FirstOrDefault(s => s.Id == coverType.Id);
+            if (objFromDb != null) //save changes if not null
+            {
+                objFromDb.Name = coverType.Name;
+                _db.SaveChanges();
+            }
         }
+
     }
 }

@@ -1,5 +1,5 @@
-﻿using AndrewsBooks.DataAccess.Repository;
-using MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository;
+﻿using MuhammedsBooks.DataAccess.Repository;
+using MuhammedsBooks.DataAccess.Repository.IRepository;
 using MuhammedsBooks.Models;
 using MuhammedsWebStore.DataAccess.Data;
 using System;

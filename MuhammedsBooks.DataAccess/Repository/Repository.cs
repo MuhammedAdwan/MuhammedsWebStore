@@ -1,4 +1,4 @@
-﻿using MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository;
+﻿using MuhammedsBooks.DataAccess.Repository;
 using MuhammedsWebStore.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace AndrewsBooks.DataAccess.Repository
+namespace MuhammedsBooks.DataAccess.Repository
 {
     // Implements all the methods of the IRepository
     public class Repository<T> : IRepository<T> where T : class

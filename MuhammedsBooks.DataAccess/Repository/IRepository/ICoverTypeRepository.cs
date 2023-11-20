@@ -4,27 +4,13 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Text;
+using MuhammedsBooks.Models;
+using MuhammedsBooks.DataAccess.Repository;
 
-
-namespace MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository
+namespace MuhammedsBooks.DataAccess.Repository.IRepository
 {
-    public interface ICoverTypeRepository<T> where T : class
+    public interface ICoverTypeRepository : IRepository<CoverType>
     {
-        T Get(int id);
-
-        IEnumerable<T> GetAll(
-            Expression<Func<T, bool>> filter = null,
-            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-            string includeProperties = null
-            );
-        T GetFirstOrDefault(
-            Expression<Func<T, bool>> filter = null,
-            string includeProperties = null
-            );
-
-        void Add(T entity);
-        void Remove(int id);
-        void Remove(T entity);
-        void RemoveRange(IEnumerable<T> entity);
+        void Update(CoverType category);
     }
 }
