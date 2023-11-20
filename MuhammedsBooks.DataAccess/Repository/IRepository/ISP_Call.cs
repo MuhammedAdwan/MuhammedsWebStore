@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MuhammedsBooks.DataAccess.Repository.IRepository
+namespace MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository
 {
     public interface ISP_Call : IDisposable
     {

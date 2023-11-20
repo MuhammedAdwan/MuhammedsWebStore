@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Text;
 
 
-namespace MuhammedsBooks.DataAccess.Repository.IRepository
+namespace MuhammedsBooks.DataAccess.Repository.ICoverTypeRepository
 {
     public interface ICoverTypeRepository<T> where T : class
     {
