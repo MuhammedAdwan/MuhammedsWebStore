@@ -181,3 +181,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
         2023-11-20
 11:55   Started Part 3
 12:16   Created CoverType.cs in the models folder
+12:25   Added the migration via PM console using the command add-migration AddCoverTypeToDb in DataAccess Default project (TIME STAMP 20231120172504_AddCoverTypeToDb)
