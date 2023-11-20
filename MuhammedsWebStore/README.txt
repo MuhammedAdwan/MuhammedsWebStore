@@ -1,4 +1,5 @@
 ﻿Assignment 2 PART 1
+Assignment 2 PART 1
 2023-10-30 - 11:27 EST
 
 Welcome to Muhammed's Web Store MVC app for the 4th time, Again I messed up the Git pull and push 
@@ -184,4 +185,5 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 12:25   Added the migration via PM console using the command add-migration AddCoverTypeToDb in DataAccess Default project (TIME STAMP 20231120172504_AddCoverTypeToDb)
 12:30   modified the ApplicationDbcontext.cs to add public DbSet<CoverType> CoverTypes { get; set; } and modified the Migration file of AddCoverTypeToDb.cs
 12:31   updated database and succeeded
+12:41   Created CoverType Repo and the ICoverType repo and modified the code and using libraries
 
