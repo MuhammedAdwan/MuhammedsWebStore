@@ -194,3 +194,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
         InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'MuhammedsBooks.Models.Category', but this ViewDataDictionary instance requires a model item of type 'MuhammedsBooks.Models.CoverType'.
         Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(object value)
 17:55   Couldnt find the issues, I had 7 errors while trying to fix it
+20:50   Fixed 6 of the errors as i forgot to add ICoverTypeRepository CoverType { get; } in IUnitOfWork IRepository

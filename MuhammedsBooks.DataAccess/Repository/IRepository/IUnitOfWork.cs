@@ -11,8 +11,7 @@ namespace MuhammedsBooks.DataAccess.Repository
     {
         ICategoryRepository Category { get; }
         ISP_Call SP_Call { get; }
-        object CoverType { get; }
-
+        ICoverTypeRepository CoverType { get; }
         void save();
     }
 }
