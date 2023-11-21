@@ -216,5 +216,6 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 
 12:09   Created product.js and updated the code
 12:16   Craeted index.cshtml in the views model and updated the code
-12:29   Created Upsert.cshtml for the product view and modified the code
-12:58   Added the rich TextBox (tinyCloud) with sweet alert API
+00:29   Created Upsert.cshtml for the product view and modified the code
+00:58   Added the rich TextBox (tinyCloud) with sweet alert API
+01:21   Added the ProductVM and created the subfolers images/products under wwwroot to save the uploaded images

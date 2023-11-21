@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using MuhammedsWebStore.DataAccess.Data;
 using MuhammedsBooks.DataAccess.Repository;
 using Microsoft.AspNetCore.Hosting;
+using MuhammedsBooks.Models.ViewModels;
 
 namespace MuhammedsWebStore.Areas.Admin.Controllers
 {
@@ -17,35 +18,45 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public ProductController(IUnitOfWork unitOfWork)
+        private readonly IWebHostEnvironment _hostEnvironment;
+
+        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
         {
             _unitOfWork = unitOfWork;
+            _hostEnvironment = hostEnvironment;
         }
+
         public IActionResult Index()
         {
             return View();
         }
-
         public IActionResult Upsert(int? id)
         {
-            Product product = new Product();
+            ProductVM productVM = new ProductVM()
+            {
+                Product = new Product(),
+                CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                }),
+                CoverTypeList = _unitOfWork.CoverType.GetAll().Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                }),
+            };
             if (id == null)
             {
-                return View(product);
+                return View(productVM);
             }
-
-            product = _unitOfWork.Product.Get(id.GetValueOrDefault());
-            if (product == null)
+            productVM.Product = _unitOfWork.Product.Get(id.GetValueOrDefault());
+            if (productVM.Product == null)
             {
                 return NotFound();
             }
-            return View(product);
+            return View(productVM);
         }
-
-
-
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(Product product)
@@ -55,30 +66,24 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
                 if (product.Id == 0)
                 {
                     _unitOfWork.Product.Add(product);
-                    _unitOfWork.Save();
                 }
                 else
                 {
-
                     _unitOfWork.Product.Update(product);
-
                 }
                 _unitOfWork.Save();
-                return RedirectToAction(nameof(Index));  //to see all the Product
+                return RedirectToAction(nameof(Index));
             }
             return View(product);
         }
 
-
-
-        //API calls here
         #region API CALLS
-        [HttpGet]
         public IActionResult GetAll()
         {
-            var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType,Product");
+            var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
             return Json(new { data = allObj });
         }
+
         [HttpDelete]
         public IActionResult Delete(int id)
         {
