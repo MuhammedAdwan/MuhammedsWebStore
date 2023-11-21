@@ -211,4 +211,9 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 23:48   Modified the UnitOfWork.cs with the new product
 23:49   added the product to the IUnitOfWork.cs
 23:55   Added the product controller in the Areas-admin-controllers folder MVC with views ... then modified the methods
+-------------------------------------------------------------------------------------------
+        2023-11-21
+
 12:09   Created product.js and updated the code
+12:16   Craeted index.cshtml in the views model and updated the code
+12:29   Created Upsert.cshtml for the product view and modified the code
