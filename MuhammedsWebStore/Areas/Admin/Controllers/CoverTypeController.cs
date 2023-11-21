@@ -9,14 +9,17 @@ using MuhammedsBooks.DataAccess.Repository;
 
 namespace MuhammedsWebStore.Areas.Admin.Controllers
 {
+   
     [Area("Admin")]
     public class CoverTypeController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
+
         public CoverTypeController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -38,10 +41,6 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
             return View(coverType);
         }
 
-
-
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(CoverType coverType)
@@ -51,48 +50,38 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
                 if (coverType.Id == 0)
                 {
                     _unitOfWork.CoverType.Add(coverType);
-                    _unitOfWork.save();
+                    _unitOfWork.Save();
                 }
                 else
                 {
-
                     _unitOfWork.CoverType.Update(coverType);
-
                 }
-                _unitOfWork.save();
-                return RedirectToAction(nameof(Index));  //to see all the coverType
+                _unitOfWork.Save();
+                return RedirectToAction(nameof(Index));
             }
             return View(coverType);
         }
 
-
-
-        //API calls here
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll()
         {
-            //Return NotFound()
             var allObj = _unitOfWork.CoverType.GetAll();
             return Json(new { data = allObj });
         }
-        [HttpDelete]
 
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             var objFromDb = _unitOfWork.CoverType.Get(id);
             if (objFromDb == null)
             {
-                return Json(new { success = true, message = "Error While deleting" });
-
+                return Json(new { success = false, message = "Error while deleting" });
             }
-
-            _unitOfWork.CoverType.Remove(objFromDb);
-            _unitOfWork.save();
+            _unitOfWork.CoverType.Remove(id);
+            _unitOfWork.Save();
             return Json(new { success = true, message = "Delete successful" });
         }
-
         #endregion
     }
-
 }

@@ -195,3 +195,5 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
         Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(object value)
 17:55   Couldnt find the issues, I had 7 errors while trying to fix it
 20:50   Fixed 6 of the errors as i forgot to add ICoverTypeRepository CoverType { get; } in IUnitOfWork IRepository
+23:10   Added New Product class in the model project 
+23:15   added the provided code to the new product class

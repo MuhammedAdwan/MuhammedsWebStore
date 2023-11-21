@@ -51,7 +51,7 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
                 if (category.Id == 0)
                 {
                     _unitOfWork.Category.Add(category);
-                    _unitOfWork.save();
+                    _unitOfWork.Save();
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
                     _unitOfWork.Category.Update(category);
 
                 }
-                _unitOfWork.save();
+                _unitOfWork.Save();
                 return RedirectToAction(nameof(Index));  //to see all the categories
             }
             return View(category);
@@ -88,7 +88,7 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
             }
 
             _unitOfWork.Category.Remove(objFromDb);
-            _unitOfWork.save();
+            _unitOfWork.Save();
             return Json(new { success = true, message = "Delete successful" });
         }
 
