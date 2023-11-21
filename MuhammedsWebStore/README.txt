@@ -197,3 +197,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 20:50   Fixed 6 of the errors as i forgot to add ICoverTypeRepository CoverType { get; } in IUnitOfWork IRepository
 23:10   Added New Product class in the model project 
 23:15   added the provided code to the new product class
+23:16   Added reference to the new product piece in the ApplicationDbContext.cs
