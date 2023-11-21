@@ -206,3 +206,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 23:21   Added the migration command add-migration addProductToDb (TIME STAMP) 20231121042217_addProductToDb
 **************************
 23:33   Created the migration command for adding validation to the product class Add-Migration addValidationToProduct then run the update-database command
+23:37   Created IRepository interface called it IProductRepository.cs and updated the methods and using libraries
