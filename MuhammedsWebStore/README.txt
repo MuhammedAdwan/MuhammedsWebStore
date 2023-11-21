@@ -207,3 +207,7 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 **************************
 23:33   Created the migration command for adding validation to the product class Add-Migration addValidationToProduct then run the update-database command
 23:37   Created IRepository interface called it IProductRepository.cs and updated the methods and using libraries
+23:47   Created ProductRepository Class and modified its method
+23:48   Modified the UnitOfWork.cs with the new product
+23:49   added the product to the IUnitOfWork.cs
+23:55   Added the product controller in the Areas-admin-controllers folder MVC with views ... then modified the methods
