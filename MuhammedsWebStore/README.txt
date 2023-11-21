@@ -182,7 +182,11 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
         2023-11-20
 11:55   Started Part 3
 12:16   Created CoverType.cs in the models folder
-12:25   Added the migration via PM console using the command add-migration AddCoverTypeToDb in DataAccess Default project (TIME STAMP 20231120172504_AddCoverTypeToDb)
+**************************
+12:25   Added the migration via PM console using the command add-migration AddCoverTypeToDb in DataAccess Default project
+        (TIME STAMP)20231120172504_AddCoverTypeToDb
+**************************
+
 12:30   modified the ApplicationDbcontext.cs to add public DbSet<CoverType> CoverTypes { get; set; } and modified the Migration file of AddCoverTypeToDb.cs
 12:31   updated database and succeeded
 12:41   Created CoverType Repo and the ICoverType repo and modified the code and using libraries
@@ -198,3 +202,6 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 23:10   Added New Product class in the model project 
 23:15   added the provided code to the new product class
 23:16   Added reference to the new product piece in the ApplicationDbContext.cs
+**************************
+23:21   Added the migration command add-migration addProductToDb (TIME STAMP) 20231121042217_addProductToDb
+**************************
