@@ -76,7 +76,7 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+            var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType,Product");
             return Json(new { data = allObj });
         }
         [HttpDelete]
