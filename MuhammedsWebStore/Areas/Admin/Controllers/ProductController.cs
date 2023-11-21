@@ -1,167 +1,96 @@
-﻿using System;
+﻿using MuhammedsBooks.DataAccess.Repository.IRepository;
+using MuhammedsBooks.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MuhammedsBooks.Models;
 using MuhammedsWebStore.DataAccess.Data;
+using MuhammedsBooks.DataAccess.Repository;
+using Microsoft.AspNetCore.Hosting;
 
 namespace MuhammedsWebStore.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class ProductController : Controller
     {
-        private readonly ApplicationDbContext _context;
-
-        public ProductController(ApplicationDbContext context)
+        private readonly IUnitOfWork _unitOfWork;
+        public ProductController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
-
-        // GET: Admin/Product
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var applicationDbContext = _context.Products.Include(p => p.Category).Include(p => p.CoverType);
-            return View(await applicationDbContext.ToListAsync());
-        }
-
-        // GET: Admin/Product/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Products
-                .Include(p => p.Category)
-                .Include(p => p.CoverType)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
-        }
-
-        // GET: Admin/Product/Create
-        public IActionResult Create()
-        {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
-            ViewData["CategoryId"] = new SelectList(_context.CoverType, "Id", "Name");
             return View();
         }
 
-        // POST: Admin/Product/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,ISBN,Author,ListPrice,ImageUrl,CategoryId,CoverTypeId")] Product product)
+        public IActionResult Upsert(int? id)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(product);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
-            ViewData["CategoryId"] = new SelectList(_context.CoverType, "Id", "Name", product.CategoryId);
-            return View(product);
-        }
-
-        // GET: Admin/Product/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
+            Product product = new Product();
             if (id == null)
             {
-                return NotFound();
+                return View(product);
             }
 
-            var product = await _context.Products.FindAsync(id);
+            product = _unitOfWork.Product.Get(id.GetValueOrDefault());
             if (product == null)
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
-            ViewData["CategoryId"] = new SelectList(_context.CoverType, "Id", "Name", product.CategoryId);
             return View(product);
         }
 
-        // POST: Admin/Product/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,ISBN,Author,ListPrice,ImageUrl,CategoryId,CoverTypeId")] Product product)
+        public IActionResult Upsert(Product product)
         {
-            if (id != product.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
+                if (product.Id == 0)
                 {
-                    _context.Update(product);
-                    await _context.SaveChangesAsync();
+                    _unitOfWork.Product.Add(product);
+                    _unitOfWork.Save();
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!ProductExists(product.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+
+                    _unitOfWork.Product.Update(product);
+
                 }
-                return RedirectToAction(nameof(Index));
+                _unitOfWork.Save();
+                return RedirectToAction(nameof(Index));  //to see all the Product
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
-            ViewData["CategoryId"] = new SelectList(_context.CoverType, "Id", "Name", product.CategoryId);
             return View(product);
         }
 
-        // GET: Admin/Product/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+
+
+        //API calls here
+        #region API CALLS
+        [HttpGet]
+        public IActionResult GetAll()
         {
-            if (id == null)
+            var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+            return Json(new { data = allObj });
+        }
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            var objFromDb = _unitOfWork.Product.GetById(id);
+            if (objFromDb == null)
             {
-                return NotFound();
+                return Json(new { success = false, message = "Error while deleting" });
             }
-
-            var product = await _context.Products
-                .Include(p => p.Category)
-                .Include(p => p.CoverType)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
+            _unitOfWork.Product.Remove(id);
+            _unitOfWork.Save();
+            return Json(new { success = true, message = "Delete successful" });
         }
-
-        // POST: Admin/Product/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool ProductExists(int id)
-        {
-            return _context.Products.Any(e => e.Id == id);
-        }
+        #endregion
     }
 }
