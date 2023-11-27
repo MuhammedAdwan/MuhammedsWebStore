@@ -1,11 +1,11 @@
-﻿using MuhammedsBooks.DataAccess.Repository;
+﻿using MuhammedsBooks.DataAccess.Repository.IRepository;
 using MuhammedsBooks.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using MuhammedsBooks.DataAccess.Repository;
 
 namespace MuhammedsWebStore.Areas.Admin.Controllers
 {
@@ -13,10 +13,12 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
+
         public CategoryController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -27,9 +29,10 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
             Category category = new Category();
             if (id == null)
             {
+                // this is for create
                 return View(category);
             }
-
+            // this is for edit
             category = _unitOfWork.Category.Get(id.GetValueOrDefault());
             if (category == null)
             {
@@ -37,10 +40,6 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
             }
             return View(category);
         }
-
-
-
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -51,48 +50,40 @@ namespace MuhammedsWebStore.Areas.Admin.Controllers
                 if (category.Id == 0)
                 {
                     _unitOfWork.Category.Add(category);
-                    _unitOfWork.Save();
                 }
                 else
                 {
-
                     _unitOfWork.Category.Update(category);
-
                 }
                 _unitOfWork.Save();
-                return RedirectToAction(nameof(Index));  //to see all the categories
+                return RedirectToAction(nameof(Index));
             }
             return View(category);
         }
 
+        #region API CALLS
 
-
-            //API calls here
-            #region API CALLS
-            [HttpGet]
+        [HttpGet]
         public IActionResult GetAll()
         {
-            //Return NotFound()
             var allObj = _unitOfWork.Category.GetAll();
             return Json(new { data = allObj });
         }
-        [HttpDelete]
 
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             var objFromDb = _unitOfWork.Category.Get(id);
-            if (objFromDb ==null)
-                {
-                return Json(new { success = true, message = "Error While deleting" });
-                
+            if (objFromDb == null)
+            {
+                return Json(new { success = false, message = "Error while deleting" });
             }
-
             _unitOfWork.Category.Remove(objFromDb);
             _unitOfWork.Save();
-            return Json(new { success = true, message = "Delete successful" });
+            return Json(new { success = true, message = "Delete Successful" });
         }
 
         #endregion
-    }
 
+    }
 }
