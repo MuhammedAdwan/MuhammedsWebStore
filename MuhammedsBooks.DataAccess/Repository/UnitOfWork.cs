@@ -1,5 +1,5 @@
-﻿using MuhammedsBooks.DataAccess.Repository.IRepository;
-using MuhammedsWebStore.DataAccess.Data;
+﻿using MuhammedsWebStore.DataAccess.Data;
+using MuhammedsBooks.DataAccess.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,8 @@ namespace MuhammedsBooks.DataAccess.Repository
             _db = db;
             Category = new CategoryRepository(_db);
             SP_Call = new SP_Call(_db);
-            CoverType = new CoverTypeRepository(db);
+            CoverType = new CoverTypeRepository(_db);
+            Product = new ProductRepository(_db);
 
         }
         public ICategoryRepository Category { get; private set; }

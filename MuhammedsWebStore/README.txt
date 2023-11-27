@@ -229,3 +229,5 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 13:40   Updated Repository.cs  IEnumerable<T> GetAll method as i had missing expressions
 13:46   Added the using System.Threading.Tasks to the top of SP_Call.cs
 13:52   Updated SP_Call class and fixed the ISP_Call by implementing the interface
+13:58   Updated the UnitOfWOrk class to add Product = new ProductRepository(_db);
+13:58   Forgot to add _ in  CoverType = new CoverTypeRepository(_db);
