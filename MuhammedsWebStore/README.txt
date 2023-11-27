@@ -227,3 +227,5 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 12:02   updated my update method (Category) in categoryRepository.cs
 12:15   Created a new text file to list all the updates iam not sure if its going to work or not.
 13:40   Updated Repository.cs  IEnumerable<T> GetAll method as i had missing expressions
+13:46   Added the using System.Threading.Tasks to the top of SP_Call.cs
+
