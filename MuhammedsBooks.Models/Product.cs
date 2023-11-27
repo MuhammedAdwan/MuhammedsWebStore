@@ -17,10 +17,12 @@ namespace MuhammedsBooks.Models
         public int Id { get; set; }
 
         public string Title { get; set; }
-
+        [Required]
         public string Description { get; set; }
+        [Required]
 
         public string ISBN { get; set; }
+        [Required]
 
         public string Author { get; set; }
 
@@ -29,6 +31,7 @@ namespace MuhammedsBooks.Models
         [Range(1, 10000)]
 
         public double ListPrice { get; set; }
+        [Required]
 
         public string ImageUrl { get; set; }
 
