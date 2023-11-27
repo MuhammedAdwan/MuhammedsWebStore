@@ -219,3 +219,8 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 00:29   Created Upsert.cshtml for the product view and modified the code
 00:58   Added the rich TextBox (tinyCloud) with sweet alert API
 01:21   Added the ProductVM and created the subfolers images/products under wwwroot to save the uploaded images
+-------------------------------------------------------------------------------------------
+
+        2023-11-27
+
+11:55   backed up my solution just in case, saved it in one drive and called it MuhammedsWebStore-Final Backup before 2.4
