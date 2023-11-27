@@ -11,6 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuhammedsBooks.Models", "Mu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuhammedsBooks.Utility", "MuhammedsBooks.Utility\MuhammedsBooks.Utility.csproj", "{E94FCF99-0DCC-4B20-9307-994C1F763E40}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BBE4C799-871C-4633-9692-4DB00374A38E}"
+	ProjectSection(SolutionItems) = preProject
+		Dont Read Me.txt = Dont Read Me.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

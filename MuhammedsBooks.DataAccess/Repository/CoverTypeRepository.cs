@@ -1,4 +1,5 @@
 ﻿using MuhammedsWebStore.DataAccess.Data;
+using MuhammedsBooks.DataAccess.Repository.IRepository;
 using MuhammedsBooks.DataAccess.Repository;
 using MuhammedsBooks.Models;
 using MuhammedsWebStore.Models;
@@ -7,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MuhammedsBooks.DataAccess.Repository.IRepository;
 
 namespace MuhammedsBooks.DataAccess.Repository
 {

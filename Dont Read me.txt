@@ -1,0 +1,1 @@
+CoverTypeRepository.cs update method not the same

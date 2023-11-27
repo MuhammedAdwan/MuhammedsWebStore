@@ -20,19 +20,11 @@ namespace MuhammedsBooks.DataAccess.Repository
 
         public void Update(Category category)
         {
-            //use .net LINQ to retrieve the first or default category object,
-            //then pass the id as a generic entity which matches the category ID
             var objFromDb = _db.Categories.FirstOrDefault(s => s.Id == category.Id);
-            if (objFromDb != null) //save changes if not null
+            if (objFromDb != null)
             {
                 objFromDb.Name = category.Name;
-                _db.SaveChanges();
             }
-        }
-
-        public void update(Category category)
-        {
-            throw new NotImplementedException();
         }
     }
 }
