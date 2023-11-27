@@ -232,3 +232,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 13:58   Updated the UnitOfWOrk class to add Product = new ProductRepository(_db);
 13:58   Forgot to add _ in  CoverType = new CoverTypeRepository(_db);
 14:05   Added the Required attribute to the product.cs
+14:09   Updated the SD.cs class- I added missing methods
