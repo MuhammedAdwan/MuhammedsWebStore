@@ -4,7 +4,6 @@ $(document).ready(function () {
     loadDataTable();
 });
 
-
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
@@ -17,13 +16,14 @@ function loadDataTable() {
                 "render": function (data) {
                     return `
                         <div class="text-center">
-                            <a href="/Admin/CoverType/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer;">
+                            <a href="/Admin/CoverType/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a onclick=Delete("/Admin/CoverType/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer;">
+                            <a onclick=Delete("/Admin/CoverType/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
-                        </div>`;
+                        </div>
+                    `;
                 }, "width": "40%"
             }
         ]
@@ -32,8 +32,8 @@ function loadDataTable() {
 
 function Delete(url) {
     swal({
-        title: "Are you sure you want to delete?",
-        text: "You will bot be able to restore the data",
+        title: "Are you sure you want to Delete?",
+        text: "You will not be able to restore the data!",
         icon: "warning",
         buttons: true,
         dangerMode: true
@@ -44,11 +44,11 @@ function Delete(url) {
                 url: url,
                 success: function (data) {
                     if (data.success) {
-                        toaster.success(data.message);
+                        toastr.success(data.message);
                         dataTable.ajax.reload();
                     }
                     else {
-                        toaster.error(data.message);
+                        toastr.error(data.message);
                     }
                 }
             });
