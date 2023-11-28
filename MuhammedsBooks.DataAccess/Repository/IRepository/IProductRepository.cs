@@ -16,5 +16,6 @@ namespace MuhammedsBooks.DataAccess.Repository.IRepository
         void Remove(int id);
         void Save();
         Product Get(int id);
+        void Remove(Product objFromDb);
     }
 }
