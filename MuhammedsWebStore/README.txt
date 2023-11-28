@@ -239,3 +239,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 22:28   Fixed some spelling mistakes in upsert.cshtml in category folder
 22:30   Deleted CoverTypes Folder that i created by mistake
 22:32   Removed the commented out code snippet in index.cshtml in CoverType Folder
+23:06   updated Upsert.cshtml for products views and made changes to product controllers and repository
