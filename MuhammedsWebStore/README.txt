@@ -243,3 +243,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 ---------------------------------------------------------------------------------
         2023-11-28
 12:56   Updated the code snippet for Application Db Context.cs 
+13:50   reverted back to the original code i had, deleted text file where i put my previous code and all the changes i did after Part 4 is released 
