@@ -234,4 +234,6 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 14:05   Added the Required attribute to the product.cs
 14:09   Updated the SD.cs class- I added missing methods
 14:19   Added using MuhammedsBooks.DataAccess.Repository.IRepository into the library in CategoryController class
-14:23   Added using MuhammedsBooks.Utility; using Dapper; libraries to the CoverTypeController.cs 
+14:23   Added using MuhammedsBooks.Utility; using Dapper; libraries to the CoverTypeController.cs
+22:22   updated Category-CoverType and Product Controllers
+22:28   Fixed some spelling mistakes in upsert.cshtml in category folder
