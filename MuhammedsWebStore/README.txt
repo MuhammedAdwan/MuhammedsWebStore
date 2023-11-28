@@ -240,3 +240,6 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 22:30   Deleted CoverTypes Folder that i created by mistake
 22:32   Removed the commented out code snippet in index.cshtml in CoverType Folder
 23:06   updated Upsert.cshtml for products views and made changes to product controllers and repository
+---------------------------------------------------------------------------------
+        2023-11-28
+12:56   Updated the code snippet for Application Db Context.cs 
