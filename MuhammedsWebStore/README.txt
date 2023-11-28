@@ -237,3 +237,4 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
 14:23   Added using MuhammedsBooks.Utility; using Dapper; libraries to the CoverTypeController.cs
 22:22   updated Category-CoverType and Product Controllers
 22:28   Fixed some spelling mistakes in upsert.cshtml in category folder
+22:30   Deleted CoverTypes Folder that i created by mistake
