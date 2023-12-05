@@ -250,4 +250,8 @@ Microsoft.EntityFrameworkCore.SqlServer.5.0.17 -> Microsoft.EntityFrameworkCore.
         2023-12-4
 11:55   Redid the project all over again, I had the same errors and the webpage is not showing the content of the database
 12:01   updated the Admin/Views/product Upsert.cshtml code to add error message and validation 
-12:16   Updated the admin/controller/productController.cs the IActionResult Upsert(int? id) metho. I didnt have any errors but the create button in upsert.cshtml is not working now and no error message
+12:16   Updated the admin/controller/productController.cs the IActionResult Upsert(int? id) metho. I didnt have any errors but the create button in      upsert.cshtml is not working now and no error message
+
+20:15   In Models-CoverType.cs, I updated the required attribute for the CoverType
+20:30   In Product.cs There was a mistake with the forign key, i used categoryID twice, updated the CoverType one
+21:00   Updated the SD.cs, removed the comments on the constants in the SD class
